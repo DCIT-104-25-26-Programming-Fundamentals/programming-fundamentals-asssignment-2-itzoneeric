@@ -28,7 +28,7 @@ double divide(double a, double b)
 }
 
 // Function for modulus
-int modulus(int a, int b)
+int calculateModulus(int a, int b)
 {
     return a % b;
 }
@@ -81,6 +81,33 @@ int main()
             break;
         }
 
+        // Modulus requires integer numbers
+        if (choice == 5)
+        {
+            int firstNumber;
+            int secondNumber;
+
+            cout << "Enter first number : ";
+            cin >> firstNumber;
+
+            cout << "Enter second number: ";
+            cin >> secondNumber;
+
+            if (secondNumber == 0)
+            {
+                cout << "Error: Cannot calculate modulus by zero." << endl;
+            }
+            else
+            {
+                cout << "Result: " << firstNumber << " % "
+                     << secondNumber << " = "
+                     << calculateModulus(firstNumber, secondNumber)
+                     << endl;
+            }
+
+            continue;
+        }
+
         double firstNumber;
         double secondNumber;
 
@@ -122,25 +149,6 @@ int main()
                          << divide(firstNumber, secondNumber) << endl;
                 }
                 break;
-
-            case 5:
-            {
-                int firstInt = static_cast<int>(firstNumber);
-                int secondInt = static_cast<int>(secondNumber);
-
-                if (secondInt == 0)
-                {
-                    cout << "Error: Cannot calculate modulus by zero."
-                         << endl;
-                }
-                else
-                {
-                    cout << "Result: " << firstInt << " % "
-                         << secondInt << " = "
-                         << modulus(firstInt, secondInt) << endl;
-                }
-                break;
-            }
 
             case 6:
                 cout << "Result: " << firstNumber << " ^ "
